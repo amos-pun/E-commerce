@@ -1,11 +1,12 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './Pages/Home'
 
 const MyRoutes = () => {
   return (
     <BrowserRouter>
         <Routes>
-            <route></route>
+          <Route path='/' element={<Home/>}/>
         </Routes>
     </BrowserRouter>
   )

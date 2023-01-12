@@ -16,7 +16,7 @@ function App() {
   
   return (
     <div>
-    <Provider store={mystore}>
+    <Provider store={myStore}>
       <MyRoutes/>
     </Provider>
     </div>
