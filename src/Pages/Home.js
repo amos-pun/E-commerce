@@ -1,5 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Card from '../Card'
+import Navbar from '../Navbar'
 
 const Home = () => {
 
@@ -8,21 +10,15 @@ const Home = () => {
     
   return (
     <div>
-      <div className="row row-cols-1 row-cols-md-2 g-4">
-      {
-        items && items.map(items =>{
-            return <div className="col">
-              <div className="card">
-                 <img src={items.item_image} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">{items.item_name}</h5>
-                <h5 className="card-title">{items.item_price}</h5>
-
-              </div>
-            </div>
-          </div>
-        })
-      }
+    <Navbar/>
+    <div className='container-fluid'>
+        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
+        {
+          items && items.map((item,i) =>{
+              return <Card item={item} key={i}/>
+          })
+        }
+        </div>
       </div>
     </div>
   )
