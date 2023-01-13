@@ -24,7 +24,6 @@ const Cart = () => {
                             <th>Product Info</th>
                             <th>Price </th>
                             <th>Action</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody className='border border-3 text-center'>
