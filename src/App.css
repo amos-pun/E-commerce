@@ -8,3 +8,16 @@
   top: 15%;
   left: 170%;
 }
+
+.action_btn{
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  color: black;
+  background-color: orangered;
+  opacity: 0.8;
+}
+
+.action_btn:hover{
+  background-color: red;
+}

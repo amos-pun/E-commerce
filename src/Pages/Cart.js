@@ -1,11 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Navbar from '../Navbar'
 
 const Cart = () => {
 
     const cartStore = useSelector(store=>store.cartStore)
     const cartItems = cartStore.cart_items
+    const dispatch = useDispatch()
 
     
   return (
@@ -29,20 +30,27 @@ const Cart = () => {
                     <tbody className='border border-3 text-center'>
                         { 
                             cartItems.map((item,i)=>{
-                                return <tr key={item.product.id}>
-                                    <td className='p-2 text-center fw-bold'>{i+1}</td>
+                                return  <tr key={item.id}>
+                                    <td className='p-2 text-center fw-bold '>{i+1}</td>
                                     <td>
                                         <img src={item.product.item_image} style={{height:"120px"}} alt="..."/>
                                     </td>
-                                    <td>
+                                    <td className='align-middle'>
                                         <h5  className='p-2'>{item.product.item_name}</h5>
                                     </td>
-                                    <td>
-                                        <h3 className='p-2 bg-warning'>{item.product.item_price}</h3>
+                                    <td className='align-middle' >
+                                        <h3 className='p-2 bg-warning '>£ {item.product.item_price}</h3>
+                                    </td>
+                                    <td className='align-middle'>
+                                        <button className='py-2 px-4 action_btn' onClick={()=>(
+                                            dispatch({type:"REMOVE_FROM_CART", payload: item.id})
+                                        )} >Remove</button>
                                     </td>
                                 </tr>
                             })
                         }
+                        <tr colspan = {4}>
+                        <button className='btn btn-warning' onClick={()=>dispatch({type:"CLEAR_CART"})}>Empty Cart</button></tr>
                     </tbody>
                 </table>
             </div>
