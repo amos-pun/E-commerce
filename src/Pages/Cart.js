@@ -14,7 +14,7 @@ const Cart = () => {
         <Navbar/>
         <div className='text-center px-5 mx-5'>
             <h1 className='border text-warning bg-dark w-100'>CART ITEMS</h1>
-        </div>
+        </div>  
         {
             cartItems && cartItems.length > 0 ?
             <div className='container '>
