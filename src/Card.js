@@ -13,7 +13,7 @@ const Card = ({item}) => {
             product: item
         }
         dispatch({type: "ADD_TO_CART", payload: cart_item})
-        toast.success("Item added to cart")
+        toast.success("Item => Cart")
     }
     
   return (

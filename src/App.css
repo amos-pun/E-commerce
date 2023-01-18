@@ -1,12 +1,21 @@
 *{
   margin: 0;
   box-sizing: border-box;
-  padding: 0;
 }
 
 .sup{
   top: 15%;
-  left: 170%;
+  left: 250%;
+}
+
+.input_search{
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+}
+
+.input_s{
+  border: 1px solid black;
 }
 
 .action_btn{
